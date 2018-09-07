@@ -18,8 +18,9 @@ export default class Carousel extends Component {
         index: (carouselData.length - 1)
       })
     } else {
+      let newIndex = this.state.index - 1;
       this.setState({
-        index: this.state.index -= 1
+        index: newIndex
       })
     }
 
@@ -31,8 +32,9 @@ export default class Carousel extends Component {
         index: 0
       })
     } else {
+      let newIndex = this.state.index + 1;
       this.setState({
-        index: this.state.index += 1
+        index: newIndex
       })
     }
 
@@ -41,7 +43,7 @@ export default class Carousel extends Component {
 
   selectedImage = () => {
    
-    return <img src={carouselData[this.state.index]} style={{display: 'block', Zindex: 0}} />
+    return <img src={carouselData[this.state.index]} style={{display: 'block', Zindex: 0}} alt={this.state.index} />
   }
   
   
